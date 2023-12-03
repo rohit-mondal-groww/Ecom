@@ -63,7 +63,9 @@ const ProductDetail = (props: IProductDetailScreenProps) => {
   }, []);
 
   if (isProductDetailLoading) {
-    return <ActivityIndicator size="large" color="#2A4BA0" style={styles.loading} />;
+    return (
+      <ActivityIndicator size="large" color="#2A4BA0" style={styles.loading} />
+    );
   }
   return (
     <>
@@ -247,10 +249,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     marginTop: 12,
   },
-  loading:{
-    alignSelf:'center',
-    flex:1
-  }
+  loading: {
+    alignSelf: 'center',
+    flex: 1,
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductDetail);

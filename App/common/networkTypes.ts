@@ -1,5 +1,5 @@
 export interface IProductDetail {
-  id: boolean;
+  id: number;
   title: string;
   description: string;
   price: number;
@@ -21,4 +21,5 @@ export interface IAllProductsResponse {
   limit: number;
 }
 
+// need to set network response type
 export interface NetworkResponse={}

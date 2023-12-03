@@ -22,17 +22,12 @@ const SearchBar = ({
       />
       <TextInput
         onPressIn={onPressIn}
-        placeholder={'Search products or store'}
+        placeholder={placeholderText}
         placeholderTextColor={'#8891A5'}
         value={searchString}
         onChangeText={onChangeText}
-        style={styles.searchInput}
         onSubmitEditing={onSubmitInput}
         autoFocus={autofocus}
-        // onFocus={() => setIsFocused(true)}
-        // onBlur={() => setIsFocused(false)}
-        // editable={isClickable}
-        // selectTextOnFocus={isClickable}
       />
       {searchString.length ? (
         <Icon
@@ -49,28 +44,21 @@ const SearchBar = ({
 
 const styles = StyleSheet.create({
   container: {
-    height:56,
-    width:'100%',
-    paddingLeft:28,
-    paddingVertical:19,
-    backgroundColor:'#153075',
-    borderRadius:50,
-    flexDirection:'row'
+    height: 56,
+    backgroundColor: '#153075',
+    borderRadius: 28,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   magnifyIcon: {
-    
+    color: '#F8F9FB',
+    marginLeft: 20,
+    marginRight: 8,
   },
-  searchInput: {
-    // height:56,
-    // width:'100%',
-    // paddingLeft:28,
-    // paddingVertical:19,
-    // backgroundColor:'#153075',
-    // borderRadius:50
-    zIndex:110
+  cancelIcon: {
+    marginRight: 16,
+    color: '#F8F9FB',
   },
-  cancelIcon: {},
 });
-
 
 export default SearchBar;

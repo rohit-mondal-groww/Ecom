@@ -1,6 +1,10 @@
 import {combineReducers} from 'redux';
-// import homeReducer from '../containers/Home/reducer';
+import {cartReducer} from './cartReducer';
+import {favoritesReducer} from './favoritesReducer';
+import {productReducer} from './productReducer';
 
 export const combinedReducers = combineReducers({
-  //   home: homeReducer,
+  common: productReducer,
+  order: cartReducer,
+  favorites: favoritesReducer,
 });

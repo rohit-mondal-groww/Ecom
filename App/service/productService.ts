@@ -1,18 +1,18 @@
 const API_URL_STRINGS = {
-  getAllProductsApiUrl: 'https://dummyjson.com/products',
-  getProductDetailsApiUrl: 'https://dummyjson.com/products/{id}',
+  allProductsApiUrl: 'https://dummyjson.com/products',
+  productDetailsApiUrl: 'https://dummyjson.com/products/{id}',
 };
 
-const getAllProductsApi = () => {
-  fetch(API_URL_STRINGS.getAllProductsApiUrl);
+const getAllProductsApi = async () => {
+  return fetch(API_URL_STRINGS.allProductsApiUrl).then(res => res.json());
 };
 
-const getProductDetailsApi = (id: string) => {
-  const newApiUrlString = API_URL_STRINGS.getProductDetailsApiUrl.replace(
-    '${id}',
-    id,
+const getProductDetailsApi = (id: number) => {
+  const newApiUrlString = API_URL_STRINGS.productDetailsApiUrl.replace(
+    '{id}',
+    id.toString(),
   );
-  fetch(newApiUrlString);
+  return fetch(newApiUrlString).then(res => res.json());
 };
 
 export const productService = {getAllProductsApi, getProductDetailsApi};

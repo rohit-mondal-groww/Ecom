@@ -19,6 +19,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     minWidth: 24, // Minimum width to ensure content visibility
     height: 24, // Height of the badge
+    position: 'absolute',
+    left: 10,
+    top: -5,
   },
   badgeText: {
     color: 'white', // Text color
